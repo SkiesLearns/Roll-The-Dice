@@ -1,0 +1,21 @@
+import random
+
+dice_1 = [1, 2, 3, 4, 5, 6]
+dice_2 = [1, 2, 3, 4, 5, 6]
+
+def game(dice_1, dice_2):
+    roll_1 = random.choice(dice_1)
+    roll_2 = random.choice(dice_2)
+    total = roll_1+roll_2
+    response = input('Are you ready to roll? (Y/N)\n')
+    while not (response.upper()== 'Y'):
+        print('Come back when youre ready')
+        break
+    else:
+        print(f'Rolling dice...\nYou rolled {roll_1} and {roll_2}')
+    if total < 8:
+        print('Damn... that sucks.')
+    else:
+        print('What a hit!')
+
+game(dice_1, dice_2)
